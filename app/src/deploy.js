@@ -1,5 +1,6 @@
 import { ethers } from 'ethers';
 import Escrow from './artifacts/contracts/Escrow.sol/Escrow';
+// const hre = require("hardhat");
 
 export default async function deploy(signer, arbiter, beneficiary, value) {
   const factory = new ethers.ContractFactory(
@@ -8,4 +9,5 @@ export default async function deploy(signer, arbiter, beneficiary, value) {
     signer
   );
   return factory.deploy(arbiter, beneficiary, { value });
+
 }
